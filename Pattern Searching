@@ -1,0 +1,64 @@
+/*WAP to search for a pattern in a given text
+Input:
+text: cabbage uses cab
+pattern: cab
+output : 0,13
+
+we have used the approach of sliding window technique */
+
+#include<bits/stdc++.h>
+#define ll long long
+#define ull unsigned long long int
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define p(x) printf("%d\n", x)
+#define pl(x) printf("%lld\n", x)
+#define s(x) scanf("%d", &x)
+#define sl(x) scanf("%lld", &x)
+#define sf(x) scanf("%lf", &x)
+#define bitcount __builtin_popcountll
+#define INF 1e18+9
+#define endl '\n'
+#define mod 1000000007
+#define FIO ios_base::sync_with_stdio(false)
+using namespace std;
+
+void solve()
+{
+    int n, temp;
+    cin >> n;
+    vector<int>v;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        v.push_back(temp);
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    string text, pattern;
+    getline(cin, text);
+    cin >> pattern;
+    int l1 = text.length();
+    int l2 = pattern.length();
+    for (int i = 0; i <= l1 - l2; i++)
+    {
+        string st = text.substr(i, l2);
+        if (st.compare(pattern) == 0)
+            cout << i << " ";
+    }
+
+    return 0;
+}
+
+/*
+Time Complexity:
+Total Windows to match = l2-l1+1
+Matching time for one window = l2
+Time Complexity = l2*l2+l1*l2+l2 = O(l1*l2)
+*/
+
